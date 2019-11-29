@@ -1,0 +1,5 @@
+name: 'Vue app'
+type: module
+description: 'Vue starter module'
+core: 8.x
+package: 'Custom'

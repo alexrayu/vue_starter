@@ -1,0 +1,8 @@
+app:
+  js:
+    app/dist/vue_starter.js: { minified: true }
+  css:
+    component:
+      app/css/vue_starter.css: {}
+  dependencies:
+    - vuejs/vue
