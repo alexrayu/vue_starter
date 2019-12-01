@@ -2,7 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 var mode = 'production';
 var filename = 'vue_starter.js';
-var publicPath = '/modules/vue_starter/app/dist/';
+var publicPath = '/modules/custom/vue_starter/app/dist/';
 
 module.exports = {
   entry: './src/main.js',

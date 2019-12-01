@@ -11,7 +11,7 @@ use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 /**
  * Class PageController.
  */
-class ImportController extends ControllerBase {
+class PageController extends ControllerBase {
 
   /**
    * CSRF Token wrapper.
