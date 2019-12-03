@@ -1,11 +1,17 @@
 var path = require('path');
 var webpack = require('webpack');
-var mode = 'production';
 var filename = 'vue_starter.js';
 var publicPath = '/modules/custom/vue_starter/app/dist/';
+const mode = process.env.NODE_ENV;
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin');
 
 module.exports = {
+  mode: mode,
   entry: './src/main.js',
+  optimization: {
+    minimize: false //Update this to true or false
+  },
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: publicPath,
@@ -20,7 +26,7 @@ module.exports = {
           loaders: {
             'scss': 'vue-style-loader!css-loader!sass-loader',
             'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
-          }
+          },
         }
       },
       {
@@ -32,9 +38,26 @@ module.exports = {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]?[hash]'
-        }
-      }
+          name: '[name].[ext]?[hash]',
+          esModule: false,
+        },
+      },
+      {
+        test: /\.s(c|a)ss$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              implementation: require('sass'),
+              sassOptions: {
+                fiber: require('fibers'),
+              },
+            },
+          },
+        ],
+      },
     ]
   },
   resolve: {
@@ -49,25 +72,25 @@ module.exports = {
   performance: {
     hints: false
   },
+  plugins: [
+    new VueLoaderPlugin(),
+    new VuetifyLoaderPlugin()
+  ],
   devtool: '#eval-source-map'
 };
 
 if (mode === 'production') {
-  module.exports.devtool = '#source-map'
+  module.exports.optimization.minimize = true;
+  module.exports.devtool = '#source-map';
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'
       }
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
-      }
-    }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
     })
   ]);
+  module.exports.externals = {};
 }

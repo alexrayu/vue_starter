@@ -1,10 +1,16 @@
 import Vue from 'vue';
 import App from './App.vue';
 import VueRouter from 'vue-router';
+import Vuetify from 'vuetify/lib';
+
+// Apply vuetify
+Vue.use(Vuetify);
+const vuetify = new Vuetify({});
 
 // Create routes
 Vue.use(VueRouter);
-const Foo = { template: '<div>foo</div>' };
+const Foo = { template: '<div>foo</div>',
+};
 const Bar = { template: '<div>bar</div>' };
 const routes = [
   { path: '/foo', component: Foo },
@@ -20,6 +26,7 @@ if (typeof vueElement === 'object') {
   new Vue({
     el: vueElement,
     router,
+    vuetify,
     render: h => h(App)
   });
 }

@@ -1,28 +1,34 @@
 {
-  "name": "vue_example_webpack",
-  "description": "An example for using webpack with vue in pdb",
+  "name": "vue_starter_webpack",
+  "description": "A starter kit for Vue with Drupal module",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "dev": "cross-env NODE_ENV=development webpack --mode development  --open --hot",
+    "build": "cross-env NODE_ENV=production webpack --progress --mode production --hide-modules"
   },
   "dependencies": {
-    "vue": "^2.2.4",
-    "vue-router": "^3.1.3"
+    "axios": "^0.19.0",
+    "vue": "^2.6.10",
+    "vue-router": "^3.1.3",
+    "vuetify": "^2.1.12"
   },
   "devDependencies": {
-    "babel-core": "^6.0.0",
-    "babel-loader": "^6.0.0",
-    "babel-preset-latest": "^6.0.0",
-    "cross-env": "^3.0.0",
-    "css-loader": "^0.25.0",
-    "file-loader": "^0.9.0",
-    "node-sass": "^4.5.0",
-    "sass-loader": "^5.0.1",
-    "vue-loader": "^11.1.4",
-    "vue-template-compiler": "^2.2.1",
-    "webpack": "^2.2.0",
-    "webpack-dev-server": "^3.1.11"
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-latest": "^6.24.1",
+    "cross-env": "^6.0.3",
+    "css-loader": "^3.2.1",
+    "deepmerge": "^4.2.2",
+    "fibers": "^4.0.2",
+    "file-loader": "^5.0.2",
+    "sass": "^1.3.2",
+    "sass-loader": "^8.0.0",
+    "vue-loader": "^15.7.2",
+    "vue-template-compiler": "^2.6.10",
+    "vuetify-loader": "^1.4.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
   }
 }
