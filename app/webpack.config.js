@@ -70,7 +70,4 @@ if (mode === 'production') {
       minimize: true
     })
   ]);
-  module.exports.externals = {
-    "vue": "Vue"
-  };
 }
