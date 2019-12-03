@@ -12,11 +12,14 @@
 </template>
 
 <script>
+import {Helper} from './main.js';
 export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      Helper,
+      t: Helper.Drupal.t,
     }
   }
 }
