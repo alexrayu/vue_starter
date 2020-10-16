@@ -1,0 +1,6 @@
+vue_starter.page:
+  title: 'ViewStarter page'
+  route_name: vue_starter.page
+  description: 'Visit ViewStarter page.'
+  parent: system.admin_config_system
+  weight: 100

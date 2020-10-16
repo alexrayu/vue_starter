@@ -4,13 +4,13 @@ vue_starter.page:
     _controller: '\Drupal\vue_starter\Controller\PageController::page'
     _title: 'Sample Page'
   requirements:
-    _permission: 'access content'
+    _permission: 'access vue_starter app'
 
-ams_import_ui.xhr:
+vue_starter.xhr:
   path: '/vue_starter/xhr'
   defaults:
     _controller: '\Drupal\vue_starter\Controller\XHRController::xhr'
     _title: 'XHR handler Controller'
   requirements:
-    _permission: 'access content'
+    _permission: 'access vue_starter app'
     _csrf_token: 'TRUE'
