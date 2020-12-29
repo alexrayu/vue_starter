@@ -51,7 +51,7 @@ class PageController extends ControllerBase {
 
     $renderable += [
       '#attached' => [
-        'library' => 'vue_starter/app',
+        'library' => ['vue_starter/app'],
         'drupalSettings' => [
           'vue_starter' => [
             'token' => $this->csrfToken->get('vue_starter/xhr'),

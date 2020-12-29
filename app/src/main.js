@@ -1,12 +1,18 @@
 import Vue from 'vue';
 import App from './App.vue';
+import Bar from './components/Bar.vue';
+import Foo from './components/Foo.vue';
 import VueRouter from 'vue-router';
 import Vuetify from 'vuetify/lib';
+import VuePageTransition from "vue-page-transition";
 
-// Define vuetify.
+// Enable page transitions.
+Vue.use(VuePageTransition);
+
+// Enable vuetify.
 Vue.use(Vuetify);
 
-// Define helper.
+// Enable helper.
 export var Helper = new Vue({
   data: {
     Drupal: null,
@@ -20,14 +26,11 @@ export var Helper = new Vue({
   Helper.Drupal = Drupal;
 })(Drupal, drupalSettings);
 
-// Define routes.
+// Enable routes.
 Vue.use(VueRouter);
-const Foo = { template: '<div>foo</div>',
-};
-const Bar = { template: '<div>bar</div>' };
 const routes = [
-  { path: '/foo', component: Foo },
-  { path: '/bar', component: Bar }
+  { name: 'foo', path: '/foo', component: Foo },
+  { name: 'bar', path: '/bar', component: Bar }
 ];
 
 // Create a root instance

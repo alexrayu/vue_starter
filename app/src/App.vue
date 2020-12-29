@@ -4,10 +4,12 @@
     <h1>{{ msg }}</h1>
     <v-text-field label="Vuetify textfield"></v-text-field>
     <p>
-      <router-link to="/foo">Go to Foo</router-link>
-      <router-link to="/bar">Go to Bar</router-link>
+      <router-link to="/foo">Foo</router-link>
+      <router-link to="/bar">Bar</router-link>
     </p>
-    <router-view></router-view>
+    <vue-page-transition name="fade-in-right" mode="out-in">
+      <router-view />
+    </vue-page-transition>
   </div>
 </template>
 
