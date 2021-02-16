@@ -129,6 +129,7 @@
   margin-right: 2em;
   width: 64px;
   height: 64px;
-  background: url(../image/duck.svg) center center no-repeat;
+  background: url(../images/duck.svg) center center no-repeat;
   background-size: contain;
+  transform: rotateY(180deg);
 }
