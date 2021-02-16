@@ -15,6 +15,7 @@
 
 <script>
 import {Helper} from './main.js';
+import {bus} from './components/bus.js';
 export default {
   name: 'app',
   data () {

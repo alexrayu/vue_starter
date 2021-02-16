@@ -4,3 +4,4 @@ app:
   css:
     component:
       app/css/vue_starter.css: {}
+      app/dist/vue-page-transition.css: {}
