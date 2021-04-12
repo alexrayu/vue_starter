@@ -65,18 +65,16 @@ class XHRController extends ControllerBase {
   }
 
   /**
-   * Deletes the file.
+   * Performs an operation.
    *
-   * @param string $report_id
-   *   File id (year-month-day format).
-   * @param string $type
-   *   File type.
+   * @param array $data
+   *   Operation data.
    *
    * @return array
    *   Response data.
    */
-  protected function deleteFile($report_id, $type) {
-    return $this->trainingFolderFile->deleteFile($report_id, $type);
+  protected function someOperation($data) {
+    return ['res' => 1];
   }
 
 }

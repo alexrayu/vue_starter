@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="vuejs">
     <img src="./assets/logo.png">
     <h1>{{ msg }}</h1>
     <v-text-field label="Vuetify textfield"></v-text-field>

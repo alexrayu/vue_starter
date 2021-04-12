@@ -2,4 +2,5 @@ name: 'Vue app'
 type: module
 description: 'Vue starter module'
 core: 8.x
+core_version_requirement: ^8 || ^9
 package: 'Custom'
