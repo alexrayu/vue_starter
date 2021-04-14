@@ -42,10 +42,10 @@ const routes = [
  *   Callback.
  */
 Vue.prototype.xhr = function (params, callback) {
-  let uri = '/my_module/xhr';
+  let uri = '/symp_idol/xhr';
   let xhr = new XMLHttpRequest();
   let pack = new FormData();
-  let token = drupalSettings.my_module.token || '';
+  let token = drupalSettings.symp_idol.token || '';
   for (let i in params) {
     pack.append(i, params[i]);
   }
@@ -55,25 +55,17 @@ Vue.prototype.xhr = function (params, callback) {
       if (this.status === 200) {
         let data = JSON.parse(xhr.responseText);
         if (typeof data.error === 'undefined') {
-          callback({request: params, data: data});
+          callback(data);
         }
         else {
           callback({
-            request: params,
-            data: {
-              'error': true,
-              'message': 'Error: ' + data.error
-            }
+            'error': data.error
           });
         }
       }
       else {
         callback({
-          request: params,
-          data: {
-            'error': true,
-            'message': 'Error ' + this.status + ', "' + this.statusText + '"'
-          }
+          'error': 'Error ' + this.status + ', "' + this.statusText + '"'
         });
       }
     }
