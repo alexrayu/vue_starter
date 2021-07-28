@@ -1,35 +1,28 @@
 {
-  "name": "vue_starter_webpack",
-  "description": "A starter kit for Vue with Drupal module",
-  "version": "1.0.0",
+  "name": "app",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack --mode development  --open --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --mode production --hide-modules"
+    "serve": "vue-cli-service serve --target lib --formats umd-min --name app src/main.js",
+    "build": "vue-cli-service build --target lib --formats umd-min --name app src/main.js",
+    "dev": "vue-cli-service build --target lib --formats umd-min --name app src/main.js --watch"
   },
   "dependencies": {
-    "axios": "^0.21.1",
-    "vue": "^2.6.10",
-    "vue-router": "^3.1.3",
-    "vuetify": "^2.1.12"
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.0-0",
+    "vuex": "^4.0.0-0"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
-    "babel-preset-latest": "^6.24.1",
-    "cross-env": "^6.0.3",
-    "css-loader": "^3.2.1",
-    "deepmerge": "^4.2.2",
-    "fibers": "^4.0.2",
-    "file-loader": "^5.0.2",
-    "sass": "^1.3.2",
-    "sass-loader": "^8.0.0",
-    "vue-loader": "^15.7.2",
-    "vue-page-transition": "^0.2.2",
-    "vue-template-compiler": "^2.6.10",
-    "vuetify-loader": "^1.4.2",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0"
-  }
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
 }
